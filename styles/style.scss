@@ -1,0 +1,131 @@
+$header1: 2.5rem;
+$header2: 4rem;
+$header3: 2.5rem;
+$header4: 2rem;
+$text: 2rem;
+$gradient: linear-gradient(left, #38d39f, #38a4d3);
+$gradient1:#38d39f;
+$gradient2: #38a4d3;
+$background-color: #154353;
+$gray-text: #2c2c2c;
+$border-gray: #dadada;
+
+@mixin flex($justify, $align, $direction){
+   display: flex;
+   justify-content: $justify;
+   align-items: $align;
+   flex-direction: $direction;
+}
+
+@import 'global';
+@import 'intro';
+@import 'projects';
+@import 'contact';
+@import 'footer';
+
+@media screen and (max-width: 1450px){
+   html{
+      font-size: 58%;
+   }
+   .intro-images svg{
+      width: 90%;
+      height: 100%;
+   }
+}
+@media screen and (max-width: 1332px){
+   html{
+      font-size: 53%;
+   }
+   .intro-images svg{
+      width: 90%;
+   }
+   // .splash{
+   //    display: none;
+   // }
+   nav{
+      width: 95%;
+   }
+   
+}
+@media screen and (max-width: 1270px){
+   .splash{
+      display: none;
+   }
+}
+@media screen and (max-width: 754px){
+   html{
+      font-size: 40%;
+   }
+   .main-head{
+      padding: 1.5rem 0rem;
+   }
+   .splash{
+      display: none;
+   }
+   svg{
+      height: 60%;
+   }
+   nav{
+      .logo{
+         @include flex(flex-start, center, row)
+      }
+   }
+   .intro{
+      width: 100%;
+      p{
+         padding-right: 0rem;
+      }
+   }
+   .intro-text{
+      text-align: center;
+      padding: 3.5rem;
+      flex: 1 1 100rem;
+   }
+   .intro-social{
+      @include flex(center, center, row);
+      a{
+         margin: 2rem;
+      }
+   }
+   .intro-images{
+      padding: 5rem;
+      text-align: center;
+      flex: 1 1 100rem;
+   }
+   .photography, .travel{
+      flex: 1 1 60rem;
+      padding: 2rem;
+      img{
+         width: 100%;
+         height: 100%;
+      }
+   }
+}
+
+@media screen and (max-width: 470px){
+   nav{
+      .logo{
+         @include flex(center, center, row);
+         flex: 1 1 25rem;
+         margin-top: 2rem;
+      }
+      ul{
+         flex: 1 1 60rem;
+         margin: 3rem 0rem;
+      }
+   }
+   form {
+      padding: 0rem;
+      width: 100%;
+    }
+   footer{
+      h4{
+         padding: 0rem 2rem;
+      }
+      ul{
+         padding: 1rem 1rem 2rem 1rem;
+         width: 100%;
+         @include flex(space-around, center, row);
+      }
+   }
+}

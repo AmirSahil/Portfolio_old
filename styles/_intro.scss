@@ -1,0 +1,140 @@
+.main-head{
+   background: rgba($color: #eaf6ff, $alpha: 0.1);
+   box-shadow: 0px 1px 10px #e2e2e2;
+}
+
+nav{
+   @include flex(space-between, center, row);
+   min-height: 10vh;
+   width: 95%;
+   margin: 0 auto;
+   flex-wrap: wrap;
+   .logo{
+      @include flex(flex-start, center, row);
+      flex: 3 1 10rem;
+      h1{
+         margin: 2rem;
+      }
+   }
+   ul{
+      @include flex(space-around, center, row);
+      flex: 1 1 40rem;
+   }
+   a{
+      padding: 1rem 3rem;
+      border-radius: 1rem;
+      transition: 0.4s ease;
+      &:hover{
+         background: $gradient1;
+         color: white;
+      }
+   }
+}
+
+.intro{
+   position: relative;
+   min-height: 90vh;
+   width: 95%;
+   margin: 0 0 0 auto;
+   flex-wrap: wrap;
+   @include flex(space-between, center, row);
+
+   h2{
+      font-size: 8rem;
+      padding-top: 1.5rem;
+      
+   }
+   h3{
+      font-size: 4.5rem;
+      padding: 1.5rem 0rem;
+   }
+   p{
+      padding: 2rem 10rem 0rem 0rem;
+      color: $gray-text;
+      font-weight: 200;
+   }
+}
+
+.splash{
+   position: absolute;
+   top: 0%;
+   right: 0%;
+   height: 100%;
+   z-index: -1;
+}
+
+.intro-social{
+   margin-top: 4rem;
+   a{
+      margin-right: 5rem;
+   }
+}
+
+.active{
+   background: $gradient2;
+   color: white;
+   padding: 1rem 3rem;
+   border-radius: 1rem;
+   &:hover{
+      background: $gradient2;
+   }
+}
+
+
+.intro-text{
+   flex: 1 1 40rem;
+   padding-top: 3rem;
+}
+.intro-images{
+   flex: 1 1 40rem;
+   padding-top: 5rem;
+}
+
+.intro-images svg{
+   width: 100%;
+   height: 100%;
+}
+
+#plant-left{
+   animation: plant 1.5s ease infinite alternate;
+}
+#plant-right{
+   animation: plant 1.5s ease infinite alternate 1s;
+}
+#me{
+   animation: me 1.5s ease infinite alternate;
+   transform-origin: bottom;
+}
+#clock-arrow{
+   animation: clock 2.5s linear infinite;
+   transform-box: fill-box;
+   transform-origin: bottom;
+}
+
+@keyframes plant{
+   from{
+      transform: translateY(0%);
+   }
+   to{
+      transform: translateY(-5%);
+   }
+}
+
+@keyframes me{
+   from{
+      transform: rotateZ(5deg);
+   }
+   to{
+      transform: rotateZ(-5deg);
+   }
+}
+
+@keyframes clock{
+   from{
+      transform: rotateZ(0deg);
+   }
+   to{
+      transform: rotateZ(360deg);
+   }
+}
+
